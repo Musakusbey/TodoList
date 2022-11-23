@@ -1,0 +1,159 @@
+Html5
+1- HTML boşluk bırakmak için " &nbsp; " kodu kullanılır. 
+
+ 
+
+CSS3
+1- Flexbox (Esnek kutu kullanımı)
+   *Sayfa içindeki elemanların kolayca yerleştirilmesi için kullanılan bir özelliktir. 
+
+     body{     
+        display:flex;  
+        align-items:center;     //Dikey hizalar.     
+        justify-content:center; //yatay hizalar.
+        flex-direction: column; //yukarıdan aşağıya doğru sıralar. 
+        } 
+
+
+2- CSS'de opacity(saydamlık) özelliği 0.0 - 1.0 arasında bir değer alabilir. Değer ne kadar düşükse, etiket o kadar saydamdır.
+  
+   Örnek: img { opacity: 0.5; }
+
+     
+3-    background-image:url("C:\Users\Musa\Desktop\sky-sea-water-moon-wallpaper-preview.jpg");  //arka plan resmi koyma
+      background-repeat:no-repeat;  //resmin tekrarlanmasını önlemek
+
+4-    background image için ölçü 3840 x 2160 olmalıdır. 
+
+5-    CSS renkleri için;     
+      color: red;   // Red renginin üstüne fareyi getirdiğinde istediğin fontları otomatikmen fareyle seçebilirsin.     
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+React Js 	    	 
+
+1-)x.target.value kullanımı:
+
+  İnputtan gelen veriyi sürekli görmemiz gerekiyor. Her veri girdiğimizde ya da sildiğimizde çalışmasını istediğimiz method'u yazmamız lazım. 
+  Kısaca veri girdiğinde inputa ne olsun sorusuna yanıt verir.
+
+ 
+  Taslak örnek:
+   const changeHandler = e => {
+    setTask(e.target.value);
+  }
+
+       
+Örnek1:
+      onChange={(e)=>
+      console.log(e.target.value)} //gelen  her e değerini consola yazdık.   
+
+ÖRNEK2:
+   const [tast, setTask] = useState(" "); //usestate kullandık
+   const changeHandler = e => {           //inputtan gelen e değerini setTask ile işledik. 
+    setTask(e.target.value); 
+  }
+
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+JS
+1- onChange: Form'un içindeki form elementlerinin(input) value'su her değiştiğinde bu değişen value'yu bizim her defasında elde etmemize olanak sağlayan eventtir.
+
+2- onSubmit: Form submit olduğu anda ne yapacağını söyleyeceğimiz event'tir.
+
+3- Preventdefault kavramı ilgili elementin tarayıcı tarafından o an yaptığı varsayılan işlemi engellemeye yarar. Örneğin a elementine tıklandığı zaman varsayılan 
+davranışı ilgili url adresine yönlenmektir bu davranışı engellemek için preventdefault kullanırız.   
+------------------------------------------------------------------------------------------------------------- 
+ 
+4- Javascript’te Rest ve Spread Operatörleri 
+  -JavaScript ES6 ile birlikte gelen üç nokta ... hem Rest hem de Spread Operatörü olarak geçiyor,  
+
+   Rest Parametresi?   
+   Rest Parametresi, fonksiyonlara sınır sayısı olmadan parametre geçmemize olanak verir ve bizim isteğimiz harici kalan tüm öğeleri bir dizide toplar
+ 
+Örnek:
+ 
+function sum(a,b,...remaining){  
+  console.log(a); // 1
+  console.log(b); // 2
+  console.log(remaining); // [3,4,5,6,7]
+}
+     
+sum(1,2,3,4,5,6,7);
+     
+->  Rest Parametresi, geriye kalan tüm değişkenleri toplar bu yüzden fonksiyonun son parametresi olmalı.
+->  Bir fonksiyonda sadece bir Rest Parametresi olabilir
+
+-------------------------------------------------------------------------------------------------------------
+ Spread Operatör
+-> Spread Operatörü; String, Array veya Object değişmezlerini genişletmemize yardımcı olur.
+
+a-) String ifadelerde kullanımı: Bir string ifadeyi parçalara bölüp dizi haline getirmek istersek aşağıdaki gibi kullanabiliriz:
+
+Örnek:
+let name = "JavaScript";
+let x = [...name];
+console.log(x); // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+
+
+b-) Dizileri Birleştirme 
+
+Aşağıdaki kodda, spread operatörünü kullanarak group1 ve group2 değişkenlerini tek bir dizide birleştirdik.
+
+Örnek:
+const group1 = [1,2,3];
+const group2 = [4,5,6];
+const allGroups = [...group1,...group2];
+console.log(allGroups) // [1, 2, 3, 4, 5, 6]
+  
+
+c-) Fonksiyon çağrılarında Spread Operatör kullanımı
+
+Örnek:
+function sum(a,b,c){
+    return a+b+c;
+}
+const nums = [1,2,3];
+sum(...nums) // 6
+ 
+-------------------------------------------------------------------------------------------------------------
+
+Örnekler Kısmı
+
+/Rest Operator
+    const obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+        e: 5
+    }
+
+    const { a, b, ...z } = obj; 
+    console.log(a, b, z); // 1, 2, { c: 3, d: 4, e: 5} 
+                   //Rest: Bana a, b ve “diğerlerini” ver
+                   //Bana a ve b'yi ver. Geri kalanını ise z adında yeni bir obje topla demektir.
+
+    //Spread Operator
+    const obj2 = { a, ...z }
+    console.log(obj2); // { a: 1, c: 3, d: 4, e: 5 }     //Spread: a’yı al, gerisini bunlardan dağıt 😂
+                  //Spread kısmında ise yeni bir obje tanımı yapıyorum, objeye a’yı ekliyorum ve z objesinin tüm propertylerini de bu yeni objeye dağıtıyorum.
+
+-------------------------------------------------------------------------------------------------------------
+
+Ayrımlarını daha kolay yapabilmek için bazı ipuçları;
+ 
+
+Eğer ... fonksiyonun sonunda yer alıyorsa bu Rest parametresidir ve geriye kalanlar bir diziye alınırlar.
+Eğer ... fonksiyon çağrımında veya benzeri bir olayda kullanılıyorsa buna Spread Operatörü denir ve diziyi listeye çevirir.
+-------------------------------------------------------------------------------------------------------------    
+
+
+
+
+
+
+
+
+
+

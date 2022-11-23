@@ -1,0 +1,52 @@
+body{
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:url("C:\Users\Musa\Desktop\Resim1.webp"); 
+  background-repeat:no-repeat;
+} 
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#sbmt{
+  background-color:rgb(72, 177, 72);
+  padding:0px 20px 0px 20px;
+  border-radius: 10px;
+  font-style: oblique;  
+  color:white;
+}
+
+#delete{
+  background-color:rgb(194, 59, 59);
+  padding:0px 20px 0px 20px;
+  border-radius: 10px;
+  font-style: oblique;
+  font-weight: bold;
+  color:white; 
+  margin:5px 5px 5px 5px;
+  display:flex;  
+  align-items:center;     
+  justify-content:center; 
+  flex-direction: column; 
+}
+
+#text{
+  background-color:bisque;
+  padding:0px 20px 0px 20px;
+  border-radius: 10px;
+  font-style: oblique;
+  color:black;
+}
+
+.card-title{
+  font-size: 30px;
+  font-style: italic;
+  color:burlywood;
+  font-weight: bold;
+}
